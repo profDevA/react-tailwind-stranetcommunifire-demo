@@ -2,6 +2,9 @@ import { useState } from "react";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 import AxeroWidget from "../components/AxeroWidget";
+import Departments from "../components/departments";
+import Lunchpad from "../components/lunchpad";
+import QuickLinks from "../components/quicklinks";
 
 export default function Home () {
     const [axeroWidgetData, setAxeroWidgetData] = useState([
@@ -29,14 +32,19 @@ export default function Home () {
             <Header />
             <Banner />
             <div className="main-content pt-8 px-4">
-                <div className="row ">
+                <div className="row md:flex max-w-7xl mx-auto">
                     {
                         axeroWidgetData.map((widData, i) => 
-                        <div key={i} className={'mb-4'}>
+                        <div key={i} className={'mb-4 flex-1 md:mr-4 md:last:mr-0'}>
                             <AxeroWidget widData={widData} />
                         </div>
                         )
                     }
+                </div>
+                <div className="row md:flex max-w-7xl mx-auto">
+                    <Departments />
+                    <QuickLinks />
+                    <Lunchpad />
                 </div>
             </div>
         </div>

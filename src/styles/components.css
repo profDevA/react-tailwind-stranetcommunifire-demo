@@ -1,0 +1,4 @@
+
+.wid-wrapper:hover::after {
+    background-color: rgba(0, 0 , 0, .7);
+}
