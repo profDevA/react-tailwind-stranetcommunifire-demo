@@ -11,6 +11,8 @@ module.exports = {
       },
       colors: {
         orange: colors.orange,
+        cyan: colors.cyan,
+        "light-blue": colors.lightBlue,
       },
       textColor: [
         'responsive',
@@ -22,6 +24,21 @@ module.exports = {
         'hover_after',
         'focus_before',
       ],
+      spacing: {
+        '100px': '100px',
+        '1/10': '10%',
+      },
+      maxWidth: {
+        '1/4': '25%',
+        '1/2': '50%',
+        '3/4': '75%',
+      },
+      maxHeight: {
+        '1/4': '25%',
+        '1/2': '50%',
+        '3/4': '75%',
+        '55%': '55%',
+      },
     },
   },
   variants: {
