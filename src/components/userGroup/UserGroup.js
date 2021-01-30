@@ -7,7 +7,7 @@ export default function UserGroup({usersData}) {
                     usersData.users.map((user, index) =>
                         <div className="group w-14 mr-3 last:mr-0" key={index}>
                             <a href="" className="cursor-pointer">
-                                <img src={user.avatar} alt={user.userName} className="rounded-full group-hover:border-2 border-cyan-500" />
+                                <img src={user.avatar} alt={user.userName} className="rounded-full border-2 border-transparent group-hover:border-cyan-500" />
                             </a>
                         </div>
                     )
