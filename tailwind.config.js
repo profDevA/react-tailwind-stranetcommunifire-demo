@@ -25,6 +25,7 @@ module.exports = {
         'focus_before',
       ],
       spacing: {
+        '30': '7.5rem',
         '100px': '100px',
         '1/10': '10%',
       },
@@ -43,7 +44,10 @@ module.exports = {
   },
   variants: {
     extend: {
-      margin: ['last']
+      margin: ['last'],
+      padding: ['hover', 'focus', 'group-hover'],
+      display: ['hover', 'group-hover'],
+      borderWidth: ['hover', 'focus', 'group-hover'],
     },
   },
   plugins: [

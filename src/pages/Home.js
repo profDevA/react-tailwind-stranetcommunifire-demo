@@ -1,9 +1,12 @@
 import { useState } from "react";
 import Header from "../components/header";
+import Footer from "../components/footer";
 import Lunchpad from "../components/lunchpad";
 import Container from "../layouts/main/container";
 import Article from "../components/article";
 import UserGroup from "../components/userGroup";
+import Tweets from "../components/tweets";
+import PageControl from "../components/pageControl";
 
 export default function Home() {
     const [sassCompanies, setSassCompanies] = useState([
@@ -284,7 +287,7 @@ export default function Home() {
         <div className="main bg-gray-50">
             <Header />
             <Container>
-                <h1 className="font-medium text-2xl text-right text-gray-800 mb-8 sm:mb-12 mr-2">Lunchpad</h1>
+                <h1 className="font-medium text-2xl text-right text-gray-800 mt-4 sm:mt-6 mb-8 sm:mb-12 mr-2">Lunchpad</h1>
                 <div className="lunchpads-contaier flex flex-wrap mb-16">
                     {
                         sassCompanies.map((company, index) =>
@@ -294,12 +297,12 @@ export default function Home() {
                         )
                     }
                 </div>
-                
-                <div className="content-wrap bg-light-blue-400 p-4 mb-12">
-                    <div className="content max-w-6xl mx-auto">
+
+                <div className="content-wrap bg-light-blue-400 p-4 mb-16">
+                    <div className="content max-w-6xl mx-auto mb-14">
                         <div className="blog-list flex flex-wrap">
                             {
-                                articles.map((article, i) => 
+                                articles.map((article, i) =>
                                     <div className="article-wrap mb-4 w-full md:w-1/2 md:px-2 lg:w-1/3" key={i}>
                                         <Article article={article} />
                                     </div>
@@ -307,21 +310,26 @@ export default function Home() {
                             }
                         </div>
                     </div>
-                </div>
-                <div>
-                    <div>
-                        <div>
-                            <UserGroup />
+                    <div className="md:flex md:justify-between max-w-6xl mx-auto">
+                        <div className="md:px-2">
+                            <div className="mb-6">
+                                <UserGroup usersData={userGroups[0]} />
+                            </div>
+                            <div className="mb-6">
+                                <UserGroup usersData={userGroups[1]} />
+                            </div>
+                            <div className="mb-6">
+                                <UserGroup usersData={userGroups[2]} />
+                            </div>
                         </div>
-                        <div>
-                            <UserGroup />
-                        </div>
-                        <div>
-                            <UserGroup />
+                        <div className="md:px-2 md:w-2/5">
+                            <Tweets />
                         </div>
                     </div>
                 </div>
             </Container>
+            <Footer />
+            <PageControl />
         </div>
     )
 }
